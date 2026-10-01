@@ -84,3 +84,136 @@
         </div>
       </div>
     </section>
+
+    <section id="schedule" class="section">
+      <div class="container">
+        <h2 class="section__title">Расписание</h2>
+
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Курс</th>
+              <th>Категория</th>
+              <th>Стоимость, ₽</th>
+              <th>Длительность, ч</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Основы HTML</td>
+              <td>Программирование</td>
+              <td>1200</td>
+              <td>16</td>
+            </tr>
+            <tr>
+              <td>Основы CSS</td>
+              <td>Программирование</td>
+              <td>1400</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>JavaScript</td>
+              <td>Программирование</td>
+              <td>1800</td>
+              <td>32</td>
+            </tr>
+            <tr>
+              <td>Введение в Git</td>
+              <td>Инструменты</td>
+              <td>900</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>Основы UX</td>
+              <td>Дизайн</td>
+              <td>2000</td>
+              <td>24</td>
+            </tr>
+            <tr>
+              <td>Работа с API</td>
+              <td>Backend</td>
+              <td>1600</td>
+              <td>18</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="contacts" class="section">
+      <div class="container">
+        <h2 class="section__title">Обратная связь</h2>
+
+        <form class="feedback-form" action="#" method="post">
+          <div class="form-row">
+            <label for="name">Имя</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              minlength="2"
+              maxlength="50"
+              placeholder="Иван">
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              placeholder="ivan@example.com">
+          </div>
+
+          <div class="form-row">
+            <label for="age">Возраст</label>
+            <input
+              id="age"
+              name="age"
+              type="number"
+              min="16"
+              max="99"
+              required
+              placeholder="18">
+          </div>
+
+          <div class="form-row">
+            <label for="course">Интересующий курс</label>
+            <select id="course" name="course" required>
+              <option value="">— выберите курс —</option>
+              <option value="html">Основы HTML</option>
+              <option value="css">Основы CSS</option>
+              <option value="js">JavaScript</option>
+              <option value="git">Введение в Git</option>
+              <option value="ux">Основы UX</option>
+              <option value="api">Работа с API</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="comment">Комментарий</label>
+            <textarea
+              id="comment"
+              name="comment"
+              rows="4"
+              maxlength="300"
+              placeholder="Ваш вопрос или пожелание"></textarea>
+          </div>
+
+          <button type="submit" class="btn">Отправить</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Информационный портал факультета</p>
+      <p>Практическая работа №1 — HTML и CSS</p>
+    </div>
+  </footer>
+</body>
+</html>
