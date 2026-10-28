@@ -1,0 +1,19 @@
+@use 'sass:map';
+@use '../variables' as *;
+@use '../functions' as *;
+
+.badge {
+  align-self: flex-start;
+  padding: 2px $space-sm;
+  border-radius: 999px;
+  font-size: rem(12px);
+  font-weight: 600;
+}
+
+// Модификаторы badge генерируются циклом по карте цветов направлений
+@each $name, $color in $category-colors {
+  .badge--#{$name} {
+    color: $color;
+    background: tint($color);
+  }
+}

@@ -1,0 +1,43 @@
+// Значения перенесены из data/theme.json. Это единственное место, где они заданы.
+
+// Цвета (theme.json → colors)
+$color-primary: #315efb;
+$color-primary-dark: #2347c8;
+$color-accent: #f59e0b;
+$color-background: #f4f6fb;
+$color-surface: #ffffff;
+$color-text: #1f2937;
+$color-muted: #667085;
+$color-border: #e4e7ec;
+$color-header: #121a2b;
+
+// Цвета направлений для badge
+$category-colors: (
+  web: $color-primary,
+  db: #0f9d8a,
+  tools: #7c3aed,
+  design: #db2777,
+);
+
+// Радиус (theme.json → radius)
+$radius: 12px;
+
+// Отступы (theme.json → spacing)
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 40px;
+
+// Контейнер и типографика
+$container-width: 1200px;
+$font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+$font-size-base: 16px;
+
+// Брейкпоинты (theme.json → breakpoints)
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+
+// Ширина колонок
+$sidebar-width: 240px;
+$card-min-width: 220px;

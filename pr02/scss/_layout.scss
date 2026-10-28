@@ -1,0 +1,124 @@
+@use 'variables' as *;
+@use 'functions' as *;
+@use 'mixins' as *;
+
+.container {
+  @include container;
+}
+
+// Шапка
+.site-header {
+  background: $color-header;
+  color: #fff;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: $space-sm $space-lg;
+    padding-block: $space-md;
+  }
+
+  &__logo {
+    color: #fff;
+    font-size: rem(20px);
+    font-weight: 700;
+    text-decoration: none;
+    @include focus-ring(#fff);
+  }
+}
+
+.site-nav {
+  display: flex;
+  gap: $space-md;
+
+  &__link {
+    color: #cbd5e1;
+    text-decoration: none;
+    @include focus-ring(#fff);
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+// Основная раскладка: панель фильтров слева, каталог справа
+.page {
+  padding-block: $space-lg;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: $sidebar-width minmax(0, 1fr);
+  gap: $space-lg;
+  align-items: start;
+}
+
+// Сетка карточек: число колонок зависит от ширины
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($card-min-width, 1fr));
+  gap: $space-lg;
+}
+
+.catalog-section__title {
+  font-size: rem(28px);
+  margin-bottom: $space-md;
+}
+
+.catalog-section__empty {
+  @include surface;
+  color: $color-muted;
+}
+
+// Подвал
+.site-footer {
+  background: $color-header;
+  color: #cbd5e1;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: $space-sm;
+    padding-block: $space-md;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+// Breakpoint 1 (768px): перестраиваем основную раскладку — фильтры над карточками
+@include below($breakpoint-md) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .filters {
+    position: static;
+  }
+}
+
+// Breakpoint 2 (480px): меняем плотность карточек и навигацию
+@include below($breakpoint-sm) {
+  .catalog {
+    grid-template-columns: minmax(0, 1fr);
+    gap: $space-md;
+  }
+
+  .site-nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .catalog-section__title {
+    font-size: rem(22px);
+  }
+}

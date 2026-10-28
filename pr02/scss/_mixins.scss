@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+// Адаптивный контейнер: максимальная ширина + боковые поля.
+@mixin container {
+  width: 100%;
+  max-width: $container-width;
+  margin-inline: auto;
+  padding-inline: $space-md;
+}
+
+// Единое состояние фокуса для ссылок, кнопок и чипов.
+@mixin focus-ring($color: $color-primary) {
+  &:focus-visible {
+    outline: 3px solid rgba($color, 0.45);
+    outline-offset: 2px;
+  }
+}
+
+// Белая «поверхность» с рамкой и скруглением — карточки, панели, блоки.
+@mixin surface($padding: $space-md) {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+  padding: $padding;
+}
+
+// Медиазапрос «до ширины».
+@mixin below($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}

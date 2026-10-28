@@ -1,0 +1,47 @@
+@use 'variables' as *;
+@use 'functions' as *;
+
+// CSS custom properties: доступны в браузере во время работы страницы
+// (их видно и можно менять в DevTools), в отличие от SCSS-переменных.
+:root {
+  --color-primary: #{$color-primary};
+  --color-accent: #{$color-accent};
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family;
+  font-size: rem(16px);
+  line-height: 1.5;
+  background: $color-background;
+  color: $color-text;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 $space-sm;
+  line-height: 1.25;
+}
+
+code {
+  background: $color-background;
+  padding: 0 $space-xs;
+  border-radius: $space-xs;
+}

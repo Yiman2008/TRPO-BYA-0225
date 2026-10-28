@@ -1,0 +1,8 @@
+// Главный файл: только подключение partial-файлов.
+// Сборка: npm run build → css/styles.css
+@use 'base';
+@use 'layout';
+@use 'components/card';
+@use 'components/badge';
+@use 'components/filters';
+@use 'components/info';

@@ -1,0 +1,13 @@
+{
+  "name": "trpo-pr02-catalog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ПР-02: адаптивный каталог учебных курсов на HTML и SCSS",
+  "scripts": {
+    "build": "sass scss/styles.scss css/styles.css --no-source-map",
+    "watch": "sass --watch scss/styles.scss:css/styles.css --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.80.0"
+  }
+}
