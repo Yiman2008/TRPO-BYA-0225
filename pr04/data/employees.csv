@@ -1,0 +1,11 @@
+id,full_name,email,department,position,experience_years,status
+101,Андреева Марина Сергеевна,m.andreeva@company.local,Разработка,Frontend-разработчик,4,active
+102,Белов Игорь Петрович,i.belov@company.local,Разработка,Backend-разработчик,7,active
+103,Власова Елена Андреевна,e.vlasova@company.local,Тестирование,QA-инженер,3,active
+104,Громов Артём Олегович,a.gromov@company.local,Аналитика,Системный аналитик,5,vacation
+105,Дмитриева Ольга Ивановна,o.dmitrieva@company.local,Дизайн,UI/UX-дизайнер,2,active
+106,Ершов Николай Викторович,n.ershov@company.local,Поддержка,Инженер поддержки,1,probation
+107,Жукова Анна Павловна,a.zhukova@company.local,Разработка,Тимлид,10,active
+108,Зайцев Максим Денисович,m.zaitsev@company.local,Тестирование,Автотестировщик,6,active
+109,Ильина Дарья Алексеевна,d.ilina@company.local,Аналитика,Бизнес-аналитик,4,active
+110,Козлов Павел Романович,p.kozlov@company.local,Поддержка,Руководитель поддержки,9,vacation
