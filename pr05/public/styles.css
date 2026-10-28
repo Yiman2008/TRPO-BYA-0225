@@ -23,7 +23,7 @@ code { background: var(--bg); padding: 0 4px; border-radius: 4px; font-size: .9e
 .nav a { color: #cbd5e1; text-decoration: none; }
 .nav a:hover { color: #fff; }
 
-main { padding-block: 24px; }
+main.container { padding-block: 24px; }
 section { scroll-margin-top: 16px; }
 .toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 16px; }
 .toolbar h1 { margin: 0; font-size: 1.6rem; }
