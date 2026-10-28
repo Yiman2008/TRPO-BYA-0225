@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каталог учебных курсов — ПР-02</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="#catalog" class="site-header__logo">Каталог учебных курсов</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a class="site-nav__link" href="#catalog">Каталог</a>
+        <a class="site-nav__link" href="#about">О каталоге</a>
+        <a class="site-nav__link" href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <div class="layout">
+
+      <aside class="filters" aria-labelledby="filters-title">
+        <h2 class="filters__title" id="filters-title">Направления</h2>
+        <div class="filters__list" role="group" aria-label="Фильтр по направлению">
+          <button class="chip chip--active" type="button" data-filter="all">Все</button>
+          <button class="chip" type="button" data-filter="web">Веб-разработка</button>
+          <button class="chip" type="button" data-filter="db">Базы данных</button>
+          <button class="chip" type="button" data-filter="tools">Инструменты</button>
+          <button class="chip" type="button" data-filter="design">Дизайн</button>
+        </div>
+        <p class="filters__count">Показано курсов: <strong id="visible-count">14</strong></p>
+      </aside>
+
+      <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
+        <h1 class="catalog-section__title" id="catalog-title">Курсы</h1>
+        <p class="catalog-section__empty" id="empty-state" hidden>В этой категории пока нет курсов.</p>
+        <div class="catalog">
+          <article class="card" id="course-1" data-category="web">
+            <img class="card__image" src="images/product-01.svg" alt="" width="320" height="180" loading="lazy">
+            <div class="card__body">
+              <span class="badge badge--web">Веб-разработка</span>
+              <h3 class="card__title">Основы HTML</h3>
+              <p class="card__text">Семантическая разметка, формы и доступность страниц</p>
+              <dl class="card__meta">
+                <div><dt>Уровень</dt><dd>Начальный</dd></div>
+                <div><dt>Часов</dt><dd>24</dd></div>
+              </dl>
+              <p class="card__price">3 200 ₽</p>
+            </div>
+          </article>
+          <article class="card" id="course-2" data-category="web">
+            <img class="card__image" src="images/product-02.svg" alt="" width="320" height="180" loading="lazy">
+            <div class="card__body">
+              <span class="badge badge--web">Веб-разработка</span>
+              <h3 class="card__title">CSS Grid и Flexbox</h3>
+              <p class="card__text">Современные раскладки и адаптивная вёрстка</p>
+              <dl class="card__meta">
+                <div><dt>Уровень</dt><dd>Начальный</dd></div>
+                <div><dt>Часов</dt><dd>20</dd></div>
+              </dl>
+              <p class="card__price">3 400 ₽</p>
+            </div>
+          </article>
+          <article class="card" id="course-3" data-category="web">
+            <img class="card__image" src="images/product-03.svg" alt="" width="320" height="180" loading="lazy">
+            <div class="card__body">
+              <span class="badge badge--web">Веб-разработка</span>
+              <h3 class="card__title">SCSS и организация стилей</h3>
+              <p class="card__text">Переменные, миксины, модули и сборка стилей</p>
+              <dl class="card__meta">
+                <div><dt>Уровень</dt><dd>Средний</dd></div>
+                <div><dt>Часов</dt><dd>16</dd></div>
+              </dl>
+              <p class="card__price">3 600 ₽</p>
+            </div>
+          </article>
+          <article class="card" id="course-4" data-category="web">
+            <img class="card__image" src="images/product-01.svg" alt="" width="320" height="180" loading="lazy">
+            <div class="card__body">
+              <span class="badge badge--web">Веб-разработка</span>
+              <h3 class="card__title">JavaScript в браузере</h3>
+              <p class="card__text">DOM, события и работа с данными на странице</p>
+              <dl class="card__meta">
+                <div><dt>Уровень</dt><dd>Средний</dd></div>
+                <div><dt>Часов</dt><dd>36</dd></div>
+              </dl>
+              <p class="card__price">5 200 ₽</p>
+            </div>
+          </article>
+          <article class="card" id="course-5" data-category="web">
+            <img class="card__image" src="images/product-02.svg" alt="" width="320" height="180" loading="lazy">
+            <div class="card__body">
+              <span class="badge badge--web">Веб-разработка</span>
+              <h3 class="card__title">Bootstrap 5</h3>
+              <p class="card__text">Сетка, компоненты и утилитарные классы</p>
+              <dl class="card__meta">
+                <div><dt>Уровень</dt><dd>Начальный</dd></div>
+                <div><dt>Часов</dt><dd>18</dd></div>
+              </dl>
+              <p class="card__price">3 000 ₽</p>
+            </div>
+          </article>
+          <article class="card" id="course-6" data-category="db">
+            <img class="card__image" src="images/product-03.svg" alt="" width="320" height="180" loading="lazy">
+            <div class="card__body">
+              <span class="badge badge--db">Базы данных</span>
+              <h3 class="card__title">Основы SQL</h3>
+              <p class="card__text">Запросы SELECT, фильтрация, группировка и соединения</p>
+              <dl class="card__meta">
+                <div><dt>Уровень</dt><dd>Начальный</dd></div>
+                <div><dt>Часов</dt><dd>28</dd></div>
+              </dl>
+              <p class="card__price">4 100 ₽</p>
+            </div>
+          </article>
+          <article class="card" id="course-7" data-category="db">
+            <img class="card__image" src="images/product-01.svg" alt="" width="320" height="180" loading="lazy">
+            <div class="card__body">
+              <span class="badge badge--db">Базы данных</span>
+              <h3 class="card__title">Проектирование БД</h3>
+              <p class="card__text">ER-модели, нормализация и ключи</p>
+              <dl class="card__meta">
+                <div><dt>Уровень</dt><dd>Средний</dd></div>
+                <div><dt>Часов</dt><dd>30</dd></div>
+              </dl>
+              <p class="card__price">4 800 ₽</p>
+            </div>
+          </article>
+          <article class="card" id="course-8" data-category="db">
+            <img class="card__image" src="images/product-02.svg" alt="" width="320" height="180" loading="lazy">
+            <div class="card__body">
+              <span class="badge badge--db">Базы данных</span>
+              <h3 class="card__title">PostgreSQL на практике</h3>
+              <p class="card__text">Индексы, транзакции и оптимизация запросов</p>
+              <dl class="card__meta">
+                <div><dt>Уровень</dt><dd>Продвинутый</dd></div>
+                <div><dt>Часов</dt><dd>32</dd></div>
+              </dl>
+              <p class="card__price">5 900 ₽</p>
+            </div>
+          </article>
+          <article class="card" id="course-9" data-category="tools">
+            <img class="card__image" src="images/product-03.svg" alt="" width="320" height="180" loading="lazy">
+            <div class="card__body">
+              <span class="badge badge--tools">Инструменты</span>
+              <h3 class="card__title">Git и GitHub</h3>
+              <p class="card__text">Коммиты, ветки, слияния и работа с удалённым репозиторием</p>
+              <dl class="card__meta">
+                <div><dt>Уровень</dt><dd>Начальный</dd></div>
+                <div><dt>Часов</dt><dd>12</dd></div>
+              </dl>
+              <p class="card__price">2 200 ₽</p>
+            </div>
+          </article>
+          <article class="card" id="course-10" data-category="tools">
+            <img class="card__image" src="images/product-01.svg" alt="" width="320" height="180" loading="lazy">
+            <div class="card__body">
+              <span class="badge badge--tools">Инструменты</span>
+              <h3 class="card__title">Командная строка Linux</h3>
+              <p class="card__text">Файлы, права доступа, процессы и скрипты</p>
+              <dl class="card__meta">
+                <div><dt>Уровень</dt><dd>Начальный</dd></div>
+                <div><dt>Часов</dt><dd>14</dd></div>
+              </dl>
+              <p class="card__price">2 400 ₽</p>
+            </div>
+          </article>
+          <article class="card" id="course-11" data-category="tools">
+            <img class="card__image" src="images/product-02.svg" alt="" width="320" height="180" loading="lazy">
+            <div class="card__body">
+              <span class="badge badge--tools">Инструменты</span>
+              <h3 class="card__title">Docker для разработчика</h3>
+              <p class="card__text">Образы, контейнеры и docker compose</p>
+              <dl class="card__meta">
+                <div><dt>Уровень</dt><dd>Средний</dd></div>
+                <div><dt>Часов</dt><dd>20</dd></div>
+              </dl>
+              <p class="card__price">4 500 ₽</p>
+            </div>
+          </article>
+          <article class="card" id="course-12" data-category="design">
+            <img class="card__image" src="images/product-03.svg" alt="" width="320" height="180" loading="lazy">
+            <div class="card__body">
+              <span class="badge badge--design">Дизайн</span>
+              <h3 class="card__title">Основы UX</h3>
+              <p class="card__text">Пользовательские сценарии и прототипирование</p>
+              <dl class="card__meta">
+                <div><dt>Уровень</dt><dd>Начальный</dd></div>
+                <div><dt>Часов</dt><dd>16</dd></div>
+              </dl>
+              <p class="card__price">3 300 ₽</p>
+            </div>
+          </article>
+          <article class="card" id="course-13" data-category="design">
+            <img class="card__image" src="images/product-01.svg" alt="" width="320" height="180" loading="lazy">
+            <div class="card__body">
+              <span class="badge badge--design">Дизайн</span>
+              <h3 class="card__title">Figma для интерфейсов</h3>
+              <p class="card__text">Компоненты, автолейаут и передача макетов в разработку</p>
+              <dl class="card__meta">
+                <div><dt>Уровень</dt><dd>Средний</dd></div>
+                <div><dt>Часов</dt><dd>22</dd></div>
+              </dl>
+              <p class="card__price">3 900 ₽</p>
+            </div>
+          </article>
+          <article class="card" id="course-14" data-category="design">
+            <img class="card__image" src="images/product-02.svg" alt="" width="320" height="180" loading="lazy">
+            <div class="card__body">
+              <span class="badge badge--design">Дизайн</span>
+              <h3 class="card__title">Типографика и цвет</h3>
+              <p class="card__text">Шрифтовые пары, контраст и цветовые палитры</p>
+              <dl class="card__meta">
+                <div><dt>Уровень</dt><dd>Начальный</dd></div>
+                <div><dt>Часов</dt><dd>10</dd></div>
+              </dl>
+              <p class="card__price">2 100 ₽</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <section class="info" id="about" aria-labelledby="about-title">
+      <h2 class="info__title" id="about-title">О каталоге</h2>
+      <p>Данные карточек взяты из <code>data/catalog.csv</code> (14 курсов, 4 направления), цвета, радиус и отступы — из <code>data/theme.json</code>.</p>
+      <ul class="info__stats">
+        <li><strong>14</strong> курсов</li>
+        <li><strong>4</strong> направления</li>
+        <li><strong>10–36</strong> часов</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contacts">
+    <div class="container site-footer__inner">
+      <p>Практическая работа №2 · ТРПО · 2026</p>
+      <a href="mailto:info@example.com">info@example.com</a>
+    </div>
+  </footer>
+
+  <script src="js/filter.js"></script>
+</body>
+</html>

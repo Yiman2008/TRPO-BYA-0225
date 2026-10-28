@@ -1,0 +1,18 @@
+/* Этап 1: рабочая раскладка на обычном CSS (до переноса в SCSS) */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Segoe UI', Roboto, Arial, sans-serif; background: #f4f6fb; color: #1f2937; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+.site-header { background: #121a2b; color: #fff; }
+.site-header__inner { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; padding-bottom: 16px; }
+.site-header__logo { color: #fff; font-weight: 700; text-decoration: none; }
+.site-nav { display: flex; gap: 16px; }
+.site-nav__link { color: #cbd5e1; text-decoration: none; }
+.layout { display: grid; grid-template-columns: 240px 1fr; gap: 24px; padding: 24px 0; }
+.filters { background: #fff; border: 1px solid #e4e7ec; border-radius: 12px; padding: 16px; align-self: start; }
+.catalog { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; }
+.card { background: #fff; border: 1px solid #e4e7ec; border-radius: 12px; overflow: hidden; }
+.card__body { padding: 16px; }
+.info { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+.site-footer { background: #121a2b; color: #cbd5e1; padding: 16px 0; }
+@media (max-width: 768px) { .layout { grid-template-columns: 1fr; } }
