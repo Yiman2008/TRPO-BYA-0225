@@ -1,3 +1,11 @@
+# ТРПО — практические работы
+
+| Работа | Папка | Запуск |
+|---|---|---|
+| ПР-01. Семантическая вёрстка | корень репозитория (`index.html`) | открыть `index.html` |
+| ПР-02. CSS, адаптивная вёрстка и SCSS | [`pr02/`](pr02/README.md) | открыть `pr02/index.html`; сборка SCSS — `npm install && npm run build` |
+| ПР-03. Bootstrap 5 и JavaScript | [`pr03/`](pr03/README.md) | `cd pr03 && python -m http.server 8000` → http://localhost:8000 |
+
 ## Структура проекта
 ```
 TRPO-BYA-0225/
