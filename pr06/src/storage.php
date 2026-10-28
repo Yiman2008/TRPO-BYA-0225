@@ -44,7 +44,7 @@ function loadJson(string $path): array
  */
 function saveJson(string $path, array $data): void
 {
-    $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR);
+    $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR);
     if (file_put_contents($path, $json . PHP_EOL, LOCK_EX) === false) {
         throw new StorageException('Не удалось записать файл: ' . basename($path));
     }

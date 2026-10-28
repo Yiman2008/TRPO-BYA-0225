@@ -1,0 +1,54 @@
+:root { --accent: #315efb; --bg: #f5f7fb; --surface: #fff; --text: #1f2937; --muted: #667085; --border: #e4e7ec; --error: #c62828; --success: #1b7f3b; --radius: 14px; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Segoe UI', Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+a { color: var(--accent); }
+code { background: var(--bg); padding: 0 4px; border-radius: 4px; }
+.header { background: #111827; color: #fff; }
+.header__inner { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; padding-block: 14px; }
+.header__title { color: #fff; font-weight: 700; font-size: 1.15rem; text-decoration: none; }
+.nav { display: flex; flex-wrap: wrap; gap: 16px; flex: 1; }
+.nav a { color: #cbd5e1; text-decoration: none; }
+.nav a:hover, .nav a[aria-current="page"] { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+.session-box { display: flex; align-items: center; gap: 8px; color: #cbd5e1; font-size: .9rem; }
+.session-box strong { color: #fff; }
+.link-button { background: none; border: 1px solid #475569; color: #e2e8f0; border-radius: 8px; padding: 2px 10px; font: inherit; cursor: pointer; }
+.link-button:hover { border-color: #fff; }
+main.container { padding-block: 24px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 20px; }
+.card--center { text-align: center; }
+.card h1, .card h2 { margin: 0 0 12px; font-size: 1.35rem; }
+.card__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; }
+.stats { margin: 0; color: var(--muted); }
+.notes { list-style: none; margin: 0; padding: 0; }
+.note { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+.note:last-child { border-bottom: 0; }
+.note__body { flex: 1; display: flex; flex-direction: column; }
+.note__meta { color: var(--muted); }
+.note--done .note__title { text-decoration: line-through; color: var(--muted); }
+.check { width: 28px; height: 28px; border-radius: 8px; border: 2px solid var(--border); background: #fff; color: var(--success); font-weight: 700; cursor: pointer; }
+.note--done .check { border-color: var(--success); background: #e9f8ef; }
+.status { font-size: .8rem; color: var(--muted); }
+.add-form label { font-weight: 600; display: block; margin-bottom: 6px; }
+.add-form__row { display: flex; gap: 8px; }
+input[type="text"] { flex: 1; min-width: 0; font: inherit; padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px; }
+.button { display: inline-block; font: inherit; font-weight: 600; padding: 8px 16px; border: 0; border-radius: 10px; background: var(--accent); color: #fff; cursor: pointer; text-decoration: none; }
+.button:hover { background: #2347c8; }
+.button--small { padding: 4px 12px; font-size: .85rem; }
+.hint { display: block; color: var(--muted); font-size: .85rem; margin-top: 8px; }
+.empty { color: var(--muted); text-align: center; padding: 16px; }
+fieldset { border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; margin: 0 0 12px; }
+.radio { display: block; padding: 4px 0; }
+.alert { padding: 10px 14px; border-radius: var(--radius); margin: 0 0 16px; }
+.alert--success { background: #e9f8ef; color: var(--success); }
+.alert--error { background: #fdecec; color: var(--error); }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+th { font-size: .85rem; color: var(--muted); }
+.row-last { background: #f0f4ff; }
+.tag { font-size: .75rem; background: #e8eeff; color: var(--accent); border-radius: 999px; padding: 0 8px; }
+.ok { color: var(--success); font-weight: 600; }
+.muted { color: var(--muted); }
+.footer { color: var(--muted); font-size: .85rem; padding-bottom: 32px; }
+@media (max-width: 560px) { .add-form__row { flex-direction: column; } .nav, .session-box { width: 100%; flex: none; } }
