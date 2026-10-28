@@ -1,0 +1,7 @@
+*.log
+.idea/
+.vscode/
+.DS_Store
+
+# резервные копии хранилища
+data/*.bak
