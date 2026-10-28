@@ -2,7 +2,7 @@
 
 PHP-приложение, которое строит **каталог товаров** из `products.json` и `categories.json` через объекты `Product` и `Category` и сервис `CatalogService`. Есть фильтр по категории и наличию, агрегаты (средняя цена, сумма, количество), сверка классов с `class_requirements.csv` и демонстрация некорректных конструкторов.
 
-**Технологии:** PHP 8.1+ (constructor property promotion, `readonly`-подход через private-свойства, `match`, nullsafe `?->`), HTML, CSS.
+**Технологии:** PHP 8.1+ (constructor property promotion, `match`, nullsafe-оператор `?->`), HTML, CSS.
 
 ## Запуск
 
