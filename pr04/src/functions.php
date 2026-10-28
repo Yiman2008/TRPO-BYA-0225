@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+date_default_timezone_set('Europe/Moscow');
+
 const APP_NAME = 'Заявки сотрудников';
 const APP_VERSION = '1.0.0';
 
