@@ -1,0 +1,64 @@
+/* Только то, что неудобно собирать utility-классами Bootstrap. */
+
+/* Якоря не прячутся под sticky-navbar */
+section[id] {
+  scroll-margin-top: 72px;
+}
+
+/* Размер аватара в navbar */
+.avatar {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+}
+
+/* Диаграмма не выше 180px */
+.chart-img {
+  max-height: 180px;
+  object-fit: contain;
+}
+
+/* Карточка показателя: крупное число и цветная полоса из data-color */
+.metric-card {
+  border-left-width: 4px;
+}
+
+.metric-value {
+  font-size: clamp(1.75rem, 1.2rem + 1.5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Подсветка новой строки журнала */
+.row-new {
+  animation: row-flash 2s ease-out;
+}
+
+@keyframes row-flash {
+  from { background-color: rgba(25, 135, 84, 0.25); }
+  to   { background-color: transparent; }
+}
+
+/* Даты в таблице не переносятся */
+.table td.text-nowrap-date {
+  white-space: nowrap;
+}
+
+/* Цветная точка в заголовке toast */
+.toast-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+}
+
+/* Непрочитанное уведомление */
+.notification-unread {
+  border-left: 3px solid var(--bs-primary);
+}
+
+/* На узком экране тема в таблице — мельче */
+@media (max-width: 767.98px) {
+  .table {
+    font-size: 0.875rem;
+  }
+}
