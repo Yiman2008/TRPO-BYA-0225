@@ -1,40 +1,40 @@
-// Значения перенесены из data/theme.json. Это единственное место, где они заданы.
+@use 'sass:color';
 
-// Цвета (theme.json → colors)
-$color-primary: #315efb;
-$color-primary-dark: #2347c8;
-$color-accent: #f59e0b;
-$color-background: #f4f6fb;
-$color-surface: #ffffff;
-$color-text: #1f2937;
-$color-muted: #667085;
-$color-border: #e4e7ec;
-$color-header: #121a2b;
+// Базовые значения перенесены из data/theme.json — это единственное место, где они заданы.
+// theme.json: accent, surface, background, text, radius (14), space (16)
+$accent: #315efb;
+$surface: #ffffff;
+$background: #f5f7fb;
+$text: #1f2937;
+$radius: 14px;
+$space: 16px;
 
-// Цвета направлений для badge
+// Производные цвета вычисляются из базовых, а не задаются «магическими» числами
+$accent-dark: color.scale($accent, $lightness: -25%);
+$muted: color.mix($text, $background, 65%);
+$border: color.mix($text, $background, 12%);
+$header-bg: color.scale($text, $lightness: -40%);
+
+// Отступы — доли и кратные базового $space
+$space-xs: $space * 0.25;  // 4px
+$space-sm: $space * 0.5;   // 8px
+$space-md: $space;         // 16px
+$space-lg: $space * 1.5;   // 24px
+$space-xl: $space * 2.5;   // 40px
+
+// Цвета категорий для badge (категории из catalog.csv)
 $category-colors: (
-  web: $color-primary,
-  db: #0f9d8a,
-  tools: #7c3aed,
-  design: #db2777,
+  books: $accent,
+  courses: #0f9d58,
+  tools: #b45309,
 );
-
-// Радиус (theme.json → radius)
-$radius: 12px;
-
-// Отступы (theme.json → spacing)
-$space-xs: 4px;
-$space-sm: 8px;
-$space-md: 16px;
-$space-lg: 24px;
-$space-xl: 40px;
 
 // Контейнер и типографика
 $container-width: 1200px;
 $font-family: 'Segoe UI', Roboto, Arial, sans-serif;
 $font-size-base: 16px;
 
-// Брейкпоинты (theme.json → breakpoints)
+// Брейкпоинты
 $breakpoint-sm: 480px;
 $breakpoint-md: 768px;
 

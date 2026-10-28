@@ -8,7 +8,7 @@
 
 // Шапка
 .site-header {
-  background: $color-header;
+  background: $header-bg;
   color: #fff;
 
   &__inner {
@@ -70,12 +70,12 @@
 
 .catalog-section__empty {
   @include surface;
-  color: $color-muted;
+  color: $muted;
 }
 
 // Подвал
 .site-footer {
-  background: $color-header;
+  background: $header-bg;
   color: #cbd5e1;
 
   &__inner {

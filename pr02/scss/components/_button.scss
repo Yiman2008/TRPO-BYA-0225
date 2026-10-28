@@ -1,0 +1,9 @@
+@use '../variables' as *;
+@use '../functions' as *;
+@use '../mixins' as *;
+
+// Локальный компонент-кнопка: стиль собирается миксином button-variant
+.button {
+  @include button-variant($accent);
+  width: 100%;
+}

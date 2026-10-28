@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use 'variables' as *;
 
 // Адаптивный контейнер: максимальная ширина + боковые поля.
@@ -9,7 +10,7 @@
 }
 
 // Единое состояние фокуса для ссылок, кнопок и чипов.
-@mixin focus-ring($color: $color-primary) {
+@mixin focus-ring($color: $accent) {
   &:focus-visible {
     outline: 3px solid rgba($color, 0.45);
     outline-offset: 2px;
@@ -18,8 +19,8 @@
 
 // Белая «поверхность» с рамкой и скруглением — карточки, панели, блоки.
 @mixin surface($padding: $space-md) {
-  background: $color-surface;
-  border: 1px solid $color-border;
+  background: $surface;
+  border: 1px solid $border;
   border-radius: $radius;
   padding: $padding;
 }
@@ -28,5 +29,24 @@
 @mixin below($breakpoint) {
   @media (max-width: $breakpoint) {
     @content;
+  }
+}
+
+// Кнопка заданного цвета: фон, hover, focus — один набор свойств для любых вариантов.
+@mixin button-variant($bg, $fg: #fff) {
+  display: inline-block;
+  padding: $space-sm $space-md;
+  border: 0;
+  border-radius: $radius;
+  background: $bg;
+  color: $fg;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  @include focus-ring($bg);
+
+  &:hover {
+    background: color.scale($bg, $lightness: -15%);
   }
 }
