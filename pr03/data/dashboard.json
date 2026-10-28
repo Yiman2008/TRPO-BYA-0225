@@ -1,0 +1,38 @@
+{
+  "project": "Панель статуса лабораторных работ",
+  "course": "Технологии разработки программного обеспечения",
+  "semester": "3 семестр, 2026–2027",
+  "updatedAt": "2026-10-27",
+  "user": {
+    "name": "Студент",
+    "role": "Исполнитель лабораторных работ",
+    "avatar": "images/avatar.svg"
+  },
+  "metrics": [
+    { "id": "labs-total", "title": "Всего работ", "value": 12, "unit": "", "hint": "по плану семестра", "color": "primary" },
+    { "id": "labs-done", "title": "Принято", "value": 6, "unit": "", "hint": "сданы и защищены", "color": "success" },
+    { "id": "labs-review", "title": "На проверке", "value": 2, "unit": "", "hint": "ожидают преподавателя", "color": "warning" },
+    { "id": "avg-score", "title": "Средний балл", "value": 4.5, "unit": "/ 5", "hint": "по принятым работам", "color": "info" },
+    { "id": "days-left", "title": "До дедлайна", "value": 5, "unit": "дн.", "hint": "ПР-04, Vue", "color": "danger" }
+  ],
+  "statuses": {
+    "accepted": { "label": "Принята", "badge": "success" },
+    "review": { "label": "На проверке", "badge": "warning" },
+    "rework": { "label": "На доработке", "badge": "danger" },
+    "progress": { "label": "В работе", "badge": "secondary" }
+  },
+  "activity": [
+    { "id": "act-08", "date": "2026-10-27", "lab": "ПР-03", "title": "Bootstrap 5 и JavaScript", "action": "Отправлена на проверку", "status": "review" },
+    { "id": "act-07", "date": "2026-10-26", "lab": "ПР-02", "title": "CSS, адаптивная вёрстка и SCSS", "action": "Работа принята, оценка 5", "status": "accepted" },
+    { "id": "act-06", "date": "2026-10-24", "lab": "ПР-02", "title": "CSS, адаптивная вёрстка и SCSS", "action": "Отправлена на проверку", "status": "review" },
+    { "id": "act-05", "date": "2026-10-21", "lab": "ЛР-05", "title": "Работа с формами", "action": "Возвращена: нет валидации email", "status": "rework" },
+    { "id": "act-04", "date": "2026-10-18", "lab": "ПР-01", "title": "Семантическая вёрстка", "action": "Работа принята, оценка 4", "status": "accepted" },
+    { "id": "act-03", "date": "2026-10-15", "lab": "ЛР-04", "title": "Git: ветки и слияние", "action": "Работа принята, оценка 5", "status": "accepted" },
+    { "id": "act-02", "date": "2026-10-12", "lab": "ПР-04", "title": "Vue: компоненты", "action": "Начата работа", "status": "progress" }
+  ],
+  "upcoming": [
+    { "id": "up-01", "lab": "ПР-04", "title": "Vue: компоненты и props", "deadline": "2026-11-02" },
+    { "id": "up-02", "lab": "ЛР-05", "title": "Работа с формами (доработка)", "deadline": "2026-11-05" },
+    { "id": "up-03", "lab": "ПР-05", "title": "Работа с API", "deadline": "2026-11-16" }
+  ]
+}

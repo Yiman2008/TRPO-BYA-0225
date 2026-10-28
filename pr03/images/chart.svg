@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160" role="img" aria-label="График сдачи работ по неделям">
+  <rect width="400" height="160" fill="#f8f9fb"/>
+  <g stroke="#e4e7ec">
+    <line x1="30" y1="130" x2="390" y2="130"/>
+    <line x1="30" y1="90" x2="390" y2="90"/>
+    <line x1="30" y1="50" x2="390" y2="50"/>
+  </g>
+  <g fill="#315efb">
+    <rect x="50" y="110" width="28" height="20" rx="4"/>
+    <rect x="110" y="90" width="28" height="40" rx="4"/>
+    <rect x="170" y="100" width="28" height="30" rx="4"/>
+    <rect x="230" y="70" width="28" height="60" rx="4"/>
+    <rect x="290" y="60" width="28" height="70" rx="4"/>
+    <rect x="350" y="40" width="28" height="90" rx="4" fill="#198754"/>
+  </g>
+</svg>
