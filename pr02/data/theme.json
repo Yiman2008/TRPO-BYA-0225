@@ -1,0 +1,28 @@
+{
+  "name": "Светлая тема каталога курсов",
+  "colors": {
+    "primary": "#315efb",
+    "primaryDark": "#2347c8",
+    "accent": "#f59e0b",
+    "background": "#f4f6fb",
+    "surface": "#ffffff",
+    "text": "#1f2937",
+    "muted": "#667085",
+    "border": "#e4e7ec",
+    "header": "#121a2b"
+  },
+  "radius": "12px",
+  "spacing": {
+    "xs": "4px",
+    "sm": "8px",
+    "md": "16px",
+    "lg": "24px",
+    "xl": "40px"
+  },
+  "containerWidth": "1200px",
+  "fontFamily": "'Segoe UI', Roboto, Arial, sans-serif",
+  "breakpoints": {
+    "sm": "480px",
+    "md": "768px"
+  }
+}
