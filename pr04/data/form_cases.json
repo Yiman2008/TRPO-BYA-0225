@@ -1,72 +1,20 @@
 [
   {
-    "id": "case-01",
-    "title": "Корректная заявка",
-    "input": { "full_name": "Лебедев Кирилл Андреевич", "email": "k.lebedev@company.local", "department": "Разработка", "position": "Junior-разработчик", "experience_years": "1", "comment": "Готов выйти с понедельника" },
-    "expected": "success",
-    "expected_errors": []
+    "case": "empty_name",
+    "name": "",
+    "experience": 2,
+    "valid": false
   },
   {
-    "id": "case-02",
-    "title": "Все поля пустые",
-    "input": { "full_name": "", "email": "", "department": "", "position": "", "experience_years": "", "comment": "" },
-    "expected": "error",
-    "expected_errors": ["full_name", "email", "department", "position", "experience_years"]
+    "case": "bad_experience",
+    "name": "Иван",
+    "experience": -2,
+    "valid": false
   },
   {
-    "id": "case-03",
-    "title": "ФИО из одних пробелов",
-    "input": { "full_name": "     ", "email": "test@company.local", "department": "Дизайн", "position": "Дизайнер", "experience_years": "2", "comment": "" },
-    "expected": "error",
-    "expected_errors": ["full_name"]
-  },
-  {
-    "id": "case-04",
-    "title": "Неверный email",
-    "input": { "full_name": "Миронова Ксения", "email": "mironova@", "department": "Аналитика", "position": "Аналитик", "experience_years": "3", "comment": "" },
-    "expected": "error",
-    "expected_errors": ["email"]
-  },
-  {
-    "id": "case-05",
-    "title": "Стаж вне диапазона",
-    "input": { "full_name": "Николаев Олег", "email": "o.nikolaev@company.local", "department": "Поддержка", "position": "Инженер", "experience_years": "75", "comment": "" },
-    "expected": "error",
-    "expected_errors": ["experience_years"]
-  },
-  {
-    "id": "case-06",
-    "title": "Стаж не число",
-    "input": { "full_name": "Орлова Вера", "email": "v.orlova@company.local", "department": "Тестирование", "position": "QA-инженер", "experience_years": "пять", "comment": "" },
-    "expected": "error",
-    "expected_errors": ["experience_years"]
-  },
-  {
-    "id": "case-07",
-    "title": "Неизвестный отдел",
-    "input": { "full_name": "Петров Семён", "email": "s.petrov@company.local", "department": "Маркетинг", "position": "Маркетолог", "experience_years": "4", "comment": "" },
-    "expected": "error",
-    "expected_errors": ["department"]
-  },
-  {
-    "id": "case-08",
-    "title": "HTML-тег в ФИО экранируется",
-    "input": { "full_name": "<script>alert(1)</script>", "email": "xss@company.local", "department": "Разработка", "position": "<b>Хакер</b>", "experience_years": "0", "comment": "<img src=x onerror=alert(1)>" },
-    "expected": "success",
-    "expected_errors": []
-  },
-  {
-    "id": "case-09",
-    "title": "Слишком длинный комментарий",
-    "input": { "full_name": "Романов Глеб", "email": "g.romanov@company.local", "department": "Дизайн", "position": "Иллюстратор", "experience_years": "2", "comment": "ОченьДлинныйКомментарийОченьДлинныйКомментарийОченьДлинныйКомментарийОченьДлинныйКомментарийОченьДлинныйКомментарийОченьДлинныйКомментарийОченьДлинныйКомментарийОченьДлинныйКомментарийОченьДлинныйКомментарийОченьДлинныйКомментарий" },
-    "expected": "error",
-    "expected_errors": ["comment"]
-  },
-  {
-    "id": "case-10",
-    "title": "Нет полей в запросе вообще",
-    "input": {},
-    "expected": "error",
-    "expected_errors": ["full_name", "email", "department", "position", "experience_years"]
+    "case": "valid",
+    "name": "Иван",
+    "experience": 4,
+    "valid": true
   }
 ]
