@@ -13,11 +13,11 @@ final class View
         $this->shared = array_merge($this->shared, $data);
     }
 
-    public function render(string $template, array $data = [], int $status = 200): void
+    public function render(string $template, array $variables = [], int $status = 200): void
     {
         http_response_code($status);
         header('Content-Type: text/html; charset=UTF-8');
-        extract(array_merge($this->shared, $data), EXTR_SKIP);
+        extract(array_merge($this->shared, $variables), EXTR_SKIP);
         ob_start();
         try {
             require $this->directory . '/' . $template . '.php';

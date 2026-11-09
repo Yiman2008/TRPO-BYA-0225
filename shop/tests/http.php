@@ -111,6 +111,9 @@ try {
     assertHttp(request('GET', '/styles.css')['status'] === 200 && request('GET', '/shop-logo.svg')['status'] === 200, 'public assets available');
     assertHttp(!preg_match('/PHP (Warning|Notice|Fatal|Deprecated)/', file_get_contents($log)), 'no PHP warnings in HTTP scenarios');
     echo "HTTP checks: $checks\n";
+} catch (Throwable $failure) {
+    fwrite(STDERR, file_get_contents($log));
+    throw $failure;
 } finally {
     proc_terminate($process);
     proc_close($process);
