@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 namespace App\Controller;
-use App\Core\{View, Session, HttpException};
+use App\Core\{View, Session, Request};
 use App\Service\CartService;
 
 final class CartController
@@ -20,17 +20,11 @@ final class CartController
     private function change(string $operation, string $message): void
     {
         $this->session->verifyToken($_POST['csrf'] ?? null);
-        $id = filter_var($_POST['product_id'] ?? null, FILTER_VALIDATE_INT);
-        if ($id === false || $id === null || $id < 1) {
-            throw new HttpException(422, 'Некорректный идентификатор товара');
-        }
+        $id = Request::positiveInt($_POST, 'product_id');
         if ($operation === 'remove') {
             $this->cart->remove($id);
         } else {
-            $qty = filter_var($_POST['qty'] ?? ($operation === 'add' ? '1' : null), FILTER_VALIDATE_INT);
-            if ($qty === false || $qty === null) {
-                throw new HttpException(422, 'Количество должно быть целым числом');
-            }
+            $qty = Request::positiveInt($_POST, 'qty', $operation === 'add' ? 1 : null);
             $this->cart->{$operation}($id, $qty);
         }
         $this->session->set('cart', $this->cart->state());

@@ -3,6 +3,7 @@ declare(strict_types=1);
 namespace App\Controller;
 use App\Core\View;
 use App\Core\HttpException;
+use App\Core\Request;
 use App\Repository\ProductRepository;
 
 final class CatalogController
@@ -11,13 +12,10 @@ final class CatalogController
 
     public function index(): void
     {
-        $rawCategory = $_GET['category'] ?? '';
-        $category = $rawCategory === '' ? null : filter_var($rawCategory, FILTER_VALIDATE_INT);
-        if ($category === false || ($category !== null && $category < 1)) {
-            throw new HttpException(422, 'Некорректная категория');
-        }
-        $sort = $_GET['sort'] ?? 'name';
-        if (!is_string($sort) || !in_array($sort, ['name', 'price'], true)) {
+        $rawCategory = Request::string($_GET, 'category');
+        $category = $rawCategory === '' ? null : Request::positiveInt($_GET, 'category');
+        $sort = Request::string($_GET, 'sort', 'name');
+        if (!in_array($sort, ['name', 'price'], true)) {
             throw new HttpException(422, 'Неизвестный режим сортировки');
         }
         $this->view->render('catalog', ['title' => 'Каталог',
@@ -27,8 +25,8 @@ final class CatalogController
 
     public function show(): void
     {
-        $id = filter_var($_GET['id'] ?? null, FILTER_VALIDATE_INT);
-        $product = $id === false || $id === null ? null : $this->products->find($id);
+        $id = Request::positiveInt($_GET, 'id');
+        $product = $this->products->find($id);
         if ($product === null) {
             throw new HttpException(404, 'Товар не найден');
         }

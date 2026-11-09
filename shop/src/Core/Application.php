@@ -11,6 +11,17 @@ final class Application
 
     public function run(): void
     {
+        error_reporting(E_ALL);
+        ini_set('display_errors', '0');
+        set_error_handler(static function (int $severity, string $message, string $file, int $line): bool {
+            if (!(error_reporting() & $severity)) { return false; }
+            throw new \ErrorException($message, 0, $severity, $file, $line);
+        });
+        header('X-Content-Type-Options: nosniff');
+        header('X-Frame-Options: DENY');
+        header("Content-Security-Policy: default-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'");
+        header('Referrer-Policy: same-origin');
+        header('Cache-Control: no-store');
         $view = new View($this->root . '/views');
         $error = new ErrorController($view);
         try {
