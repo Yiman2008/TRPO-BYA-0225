@@ -1,0 +1,1 @@
+<section class="hero"><p class="eyebrow">Спасибо за заказ</p><h1>Заказ принят</h1><p class="lead">Номер <?= e($order['id']) ?></p><p>Итоговая сумма: <strong><?= e(money($order['total'])) ?></strong></p><p>Доставка: <?= e($order['delivery']) ?></p><a class="button" href="/catalog">Вернуться в каталог</a></section>

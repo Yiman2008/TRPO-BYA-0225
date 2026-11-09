@@ -1,0 +1,11 @@
+<p class="eyebrow">Последний шаг</p><h1>Оформление заказа</h1>
+<?php if ($errors !== []): ?><div class="notice" role="alert"><h2>Проверьте данные</h2><ul><?php foreach ($errors as $error): ?><li><?= e($error) ?></li><?php endforeach ?></ul></div><?php endif ?>
+<div class="checkout"><form class="card" method="post" action="/checkout">
+<input type="hidden" name="csrf" value="<?= e($csrf) ?>">
+<?php foreach (['name' => ['Имя', 'text', 120], 'email' => ['Email', 'email', 254], 'phone' => ['Телефон (необязательно)', 'tel', 30]] as $key => [$label, $type, $max]): ?>
+<div class="field"><label for="<?= e($key) ?>"><?= e($label) ?></label><input id="<?= e($key) ?>" name="<?= e($key) ?>" type="<?= e($type) ?>" maxlength="<?= e($max) ?>" value="<?= e($data[$key]) ?>" <?= $key !== 'phone' ? 'required' : '' ?> <?= isset($errors[$key]) ? 'aria-invalid="true" aria-describedby="error-' . e($key) . '"' : '' ?>><?php if (isset($errors[$key])): ?><p class="error" id="error-<?= e($key) ?>"><?= e($errors[$key]) ?></p><?php endif ?></div>
+<?php endforeach ?>
+<div class="field"><label for="delivery">Доставка</label><select id="delivery" name="delivery" required><option value="">Выберите способ</option><?php foreach ($methods as $method): ?><option value="<?= e($method['id']) ?>" <?= $data['delivery'] === $method['id'] ? 'selected' : '' ?>><?= e($method['title']) ?> — <?= e(money($method['price'])) ?></option><?php endforeach ?></select><?php if (isset($errors['delivery'])): ?><p class="error"><?= e($errors['delivery']) ?></p><?php endif ?></div>
+<div class="field"><label for="address">Адрес для курьера</label><textarea id="address" name="address" maxlength="500" rows="3"><?= e($data['address']) ?></textarea><p class="muted">При самовывозе: Учебный пункт выдачи магазина.</p><?php if (isset($errors['address'])): ?><p class="error"><?= e($errors['address']) ?></p><?php endif ?></div>
+<button>Подтвердить заказ</button></form>
+<aside class="card"><h2>Ваш заказ</h2><?php foreach ($summary['lines'] as $line): ?><p><?= e($line['product']->name) ?> × <?= e($line['quantity']) ?> <strong><?= e(money($line['subtotal'])) ?></strong></p><?php endforeach ?><p class="summary">Товары: <?= e(money($summary['total'])) ?></p><p>Самовывоз бесплатный. Стоимость курьерской доставки добавляется к сумме при подтверждении.</p><a href="/cart">Изменить корзину</a></aside></div>
