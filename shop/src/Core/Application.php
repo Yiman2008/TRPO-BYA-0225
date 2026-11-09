@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace App\Core;
 use App\Controller\{HomeController, CatalogController, ErrorController};
+use App\Repository\ProductRepository;
 
 final class Application
 {
@@ -14,9 +15,11 @@ final class Application
         try {
             $page = Json::read($this->root . '/dataset/pr07/pages.json');
             $view->share(['storeName' => $page['store_name']]);
+            $products = new ProductRepository($this->root . '/dataset/pr08/products.json', $this->root . '/dataset/pr08/categories.json');
+            $catalog = new CatalogController($view, $products);
             $controllers = [
                 'HomeController' => new HomeController($view, $page),
-                'CatalogController' => new CatalogController($view),
+                'CatalogController' => $catalog,
                 'ErrorController' => $error,
             ];
             $router = new Router();
@@ -30,6 +33,7 @@ final class Application
                 $router->add($method, $path, [$controllers[$controller], $action]);
             }
             fclose($handle);
+            $router->add('GET', '/product', [$catalog, 'show']);
             $path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
             $router->dispatch($_SERVER['REQUEST_METHOD'] ?? 'GET', is_string($path) ? $path : '/');
         } catch (HttpException $exception) {
