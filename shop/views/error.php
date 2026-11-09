@@ -1,0 +1,1 @@
+<section class="hero"><p class="eyebrow">Ошибка <?= e($title) ?></p><h1><?= e($message) ?></h1><p>Вернитесь в каталог или откройте главную страницу.</p><a class="button" href="/catalog">В каталог</a></section>

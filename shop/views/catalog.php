@@ -1,0 +1,1 @@
+<p class="eyebrow">Товары для обучения</p><h1>Каталог</h1><div class="grid"><?php foreach ($items as $item): ?><article class="card"><h2><?= e($item['name']) ?></h2><p class="price"><?= e(money($item['price'])) ?></p></article><?php endforeach ?></div>

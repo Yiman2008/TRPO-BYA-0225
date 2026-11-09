@@ -1,0 +1,2 @@
+<section class="hero"><p class="eyebrow">Материалы для учёбы и работы</p><h1><?= e($page['store_name']) ?></h1><p class="lead"><?= e($page['tagline']) ?></p><a class="button" href="/catalog">Перейти в каталог →</a></section>
+<section><h2>Учиться удобно</h2><div class="grid"><?php foreach ($page['benefits'] as $index => $benefit): ?><article class="card"><span class="number">0<?= e($index + 1) ?></span><h3><?= e($benefit) ?></h3><p>Выбирайте нужное и оформляйте заказ в несколько шагов.</p></article><?php endforeach ?></div></section>
