@@ -1,0 +1,4 @@
+/README.md text eol=lf
+/shop/** text eol=lf
+# Keep the supplied fixture bytes and their original CRLF endings.
+/shop/dataset/** -text whitespace=cr-at-eol
