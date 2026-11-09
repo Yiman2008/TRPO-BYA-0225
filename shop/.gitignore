@@ -1,0 +1,7 @@
+/var/*
+!/var/.gitkeep
+/vendor/
+/.env
+*.log
+.idea/
+.vscode/
