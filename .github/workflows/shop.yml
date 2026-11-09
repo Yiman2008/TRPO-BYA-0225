@@ -1,0 +1,28 @@
+name: PHP MVC shop
+on:
+  push:
+    paths: ['shop/**', '.github/workflows/shop.yml']
+  pull_request:
+    paths: ['shop/**', '.github/workflows/shop.yml']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['8.1', '8.4']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+      - run: php tests/lint.php
+        working-directory: shop
+      - run: php tests/run.php
+        working-directory: shop
+      - run: php tests/architecture.php
+        working-directory: shop
+      - run: php tests/http.php
+        working-directory: shop
