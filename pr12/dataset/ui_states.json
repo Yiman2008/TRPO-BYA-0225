@@ -1,0 +1,15 @@
+[
+  {
+    "state": "loading"
+  },
+  {
+    "state": "error",
+    "message": "Test error"
+  },
+  {
+    "state": "empty"
+  },
+  {
+    "state": "success"
+  }
+]
