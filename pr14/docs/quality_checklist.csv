@@ -1,0 +1,7 @@
+check;status
+Console without errors;проверка в браузере ожидается
+Stable keys;выполнено
+No prop mutation;выполнено
+Build passes;проверка сборки ожидается
+Error state exists;выполнено
+Tests pass;выполнено
