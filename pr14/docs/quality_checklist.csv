@@ -1,5 +1,5 @@
 check;status
-Console without errors;проверка в браузере ожидается
+Console without errors;проверено в Chromium
 Stable keys;выполнено
 No prop mutation;выполнено
 Build passes;проверено в GitHub Actions

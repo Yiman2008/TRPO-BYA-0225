@@ -15,17 +15,17 @@ export default {
     labels() { return Object.fromEntries(this.filters.map(({ id, title }) => [id, title])) }
   },
   async mounted() {
+    const scenario = new URLSearchParams(location.search).get('state')
+    const state = uiStates.find(item => item.state === scenario)
+    if (state?.state === 'loading') return
     try {
-      const state = uiStates.find(item => item.state === new URLSearchParams(location.search).get('state'))
-      if (state?.state === 'loading') return
       if (state?.state === 'error') throw new Error(state.message)
       const { default: source } = await import('../dataset/items.json')
       this.items = state?.state === 'empty' ? [] : source
     } catch (error) {
       this.error = error.message
     } finally {
-      const state = new URLSearchParams(location.search).get('state')
-      this.loading = state !== 'loading'
+      this.loading = false
     }
   },
   methods: {

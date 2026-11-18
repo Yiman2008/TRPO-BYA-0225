@@ -1,7 +1,7 @@
 check;status
 Production build;проверено в GitHub Actions
-No console errors;проверка в браузере ожидается
+No console errors;проверено в Chromium
 No duplicated request while cache fresh;автотест пройден
-Offline mock works;автотесты модели пройдены
+Offline mock works;проверено в Chromium и автотестах
 Favorites persist;автотест пройден
 Tests pass;выполнено
