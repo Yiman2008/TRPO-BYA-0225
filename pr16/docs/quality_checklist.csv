@@ -1,0 +1,7 @@
+check;status
+Production build;проверка сборки ожидается
+No console errors;проверка в браузере ожидается
+No duplicated request while cache fresh;автотест пройден
+Offline mock works;автотесты модели пройдены
+Favorites persist;автотест пройден
+Tests pass;выполнено
