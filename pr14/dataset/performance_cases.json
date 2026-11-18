@@ -1,0 +1,10 @@
+[
+  {
+    "case": "filter_1000",
+    "items": 1000
+  },
+  {
+    "case": "rapid_filter_switch",
+    "switches": 50
+  }
+]

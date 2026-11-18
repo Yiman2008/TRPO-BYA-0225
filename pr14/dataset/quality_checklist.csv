@@ -1,0 +1,7 @@
+check;status
+Console without errors;
+Stable keys;
+No prop mutation;
+Build passes;
+Error state exists;
+Tests pass;
