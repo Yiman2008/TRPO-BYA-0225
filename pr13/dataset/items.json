@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Элемент 1",
+    "active": false
+  },
+  {
+    "id": 2,
+    "title": "Элемент 2",
+    "active": true
+  },
+  {
+    "id": 3,
+    "title": "Элемент 3",
+    "active": false
+  },
+  {
+    "id": 4,
+    "title": "Элемент 4",
+    "active": true
+  },
+  {
+    "id": 5,
+    "title": "Элемент 5",
+    "active": false
+  },
+  {
+    "id": 6,
+    "title": "Элемент 6",
+    "active": true
+  },
+  {
+    "id": 7,
+    "title": "Элемент 7",
+    "active": false
+  },
+  {
+    "id": 8,
+    "title": "Элемент 8",
+    "active": true
+  },
+  {
+    "id": 9,
+    "title": "Элемент 9",
+    "active": false
+  },
+  {
+    "id": 10,
+    "title": "Элемент 10",
+    "active": true
+  }
+]

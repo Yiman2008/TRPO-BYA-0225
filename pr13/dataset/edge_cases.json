@@ -1,0 +1,15 @@
+[
+  {
+    "case": "empty_list",
+    "items": []
+  },
+  {
+    "case": "missing_optional",
+    "items": [
+      {
+        "id": 1,
+        "title": "Без статуса"
+      }
+    ]
+  }
+]

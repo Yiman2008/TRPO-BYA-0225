@@ -1,0 +1,7 @@
+Options API;Composition API
+data;ref / reactive
+computed;computed
+methods;functions
+mounted;onMounted
+props;defineProps
+emits;defineEmits
