@@ -1,0 +1,7 @@
+check;status
+Production build;
+No console errors;
+No duplicated request while cache fresh;
+Offline mock works;
+Favorites persist;
+Tests pass;

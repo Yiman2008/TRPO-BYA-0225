@@ -1,0 +1,29 @@
+{
+  "current": {
+    "temperature_2m": 12.4,
+    "weather_code": 3,
+    "wind_speed_10m": 4.8
+  },
+  "daily": {
+    "time": [
+      "2026-09-16",
+      "2026-09-17",
+      "2026-09-18"
+    ],
+    "temperature_2m_max": [
+      15,
+      16,
+      14
+    ],
+    "temperature_2m_min": [
+      7,
+      8,
+      6
+    ],
+    "weather_code": [
+      3,
+      61,
+      2
+    ]
+  }
+}

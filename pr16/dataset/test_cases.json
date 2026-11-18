@@ -1,0 +1,18 @@
+[
+  {
+    "case": "select_city",
+    "expected": "forecast_visible"
+  },
+  {
+    "case": "api_error",
+    "expected": "error_message"
+  },
+  {
+    "case": "favorite_add",
+    "expected": "persisted"
+  },
+  {
+    "case": "unknown_weather_code",
+    "expected": "fallback_label"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "case": "fresh",
+    "age_seconds": 30,
+    "request_expected": false
+  },
+  {
+    "case": "expired",
+    "age_seconds": 600,
+    "request_expected": true
+  },
+  {
+    "case": "manual_refresh",
+    "age_seconds": 30,
+    "request_expected": true
+  }
+]
