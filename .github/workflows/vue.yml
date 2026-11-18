@@ -1,0 +1,45 @@
+name: Vue practical works
+on:
+  push:
+    branches: [main]
+    paths: ['pr12/**', 'pr13/**', 'pr14/**', 'pr15/**', 'pr16/**', 'checks/vue-smoke.mjs', '.github/workflows/vue.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [pr12, pr13, pr14, pr15, pr16]
+    defaults:
+      run:
+        working-directory: ${{ matrix.project }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install
+      - run: npm test
+      - if: matrix.project == 'pr14'
+        run: |
+          npm run lint
+          npm run measure
+      - run: npm run build
+      - if: matrix.project == 'pr14'
+        run: node scripts/build-report.js
+      - name: Install Chromium for browser checks
+        working-directory: checks
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Verify production preview
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 4173 --strictPort &
+          for attempt in {1..30}; do
+            if curl -fs http://127.0.0.1:4173/ > /dev/null; then break; fi
+            sleep 1
+          done
+          node ../checks/vue-smoke.mjs "${{ matrix.project }}"

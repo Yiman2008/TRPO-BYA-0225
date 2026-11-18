@@ -6,7 +6,6 @@ import CurrentWeather from '../../pr15/src/components/CurrentWeather.vue'
 import ForecastList from '../../pr15/src/components/ForecastList.vue'
 import { useWeather } from './useWeather.js'
 import { parseCities } from './weather.js'
-
 import { readFavorites, toggleFavorite, writeFavorites } from './favorites.js'
 
 const cities = parseCities(csv)
@@ -45,7 +44,7 @@ function choose(id) {
     <header><h1>Погодный менеджер</h1><p class="muted">Практическая работа №16 · Избранное и кэш</p></header>
     <section class="panel" aria-label="Настройки прогноза">
       <div class="controls">
-        <CitySelector :cities="cities"  :city="cityId" @choose="choose" />
+        <CitySelector :cities="cities" :city="cityId" @choose="choose" />
         <label class="check">
           <input v-model="offline" type="checkbox" @change="city && refresh()">
           Деморежим без API
